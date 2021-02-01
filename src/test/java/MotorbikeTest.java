@@ -22,6 +22,11 @@ public class MotorbikeTest {
     }
 
     @Test
+    public void hasBoardingInstructions() {
+        assertEquals("swing leg across seat and sit", motorbike.boardingInstructions());
+    }
+
+    @Test
     public void canStartEngine() {
         assertEquals("Vrrr. Engine is running.", motorbike.startEngine());
     }

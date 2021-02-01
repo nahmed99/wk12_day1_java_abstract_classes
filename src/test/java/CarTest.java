@@ -37,6 +37,11 @@ public class CarTest {
     }
 
     @Test
+    public void hasBoardingInstructions() {
+        assertEquals("open door, get in, sit down, and put belt on", car.boardingInstructions());
+    }
+
+    @Test
     public void canStartEngine() {
         assertEquals("Vrrr. Engine is running.", car.startEngine());
     }

@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 public class VehicleTest {
-//    Vehicle vehicle;
-//
+    Vehicle vehicle;
+
 //    @Before
 //    public void before() {
 //        vehicle = new Vehicle("Ford Escort", 4);
@@ -28,40 +28,44 @@ public class VehicleTest {
 //        assertEquals("Turn the key to start.", vehicle.drivingInstructions());
 //    }
 //
-//    //BELOW: Inheritance related tests:
-//
-//    @Test
-//    public void carAsVehicle() {
-//        vehicle = new Car("Audi A8", 2);
-//        assertEquals("Audi A8", vehicle.getModel());
-//    }
-//
-//    @Test
-//    public void motorbikeAsVehicle() {
-//        vehicle = new Motorbike("Harley");
-//        assertEquals("Harley", vehicle.getModel());
-//    }
-//
-//    @Test
-//    public void changeTypeOfVehicle() {
-//        vehicle = new Car("Audi A8", 2);
-//        vehicle = new Motorbike("Harley");
-//        assertEquals("Harley", vehicle.getModel());
-//    }
-//
-//    @Test
-//    public void collectionOfParentClassObjects() {
-//        ArrayList<Vehicle> garage = new ArrayList<Vehicle>();
-//        garage.add( new Car("Audi A8", 2));
-//        garage.add( new Motorbike("Harley"));
-//        garage.add( new Vehicle("Mini Morris", 4)); //note: this won't work with abstract classes
-//        assertEquals(3, garage.size());
-//    }
-//
-//    @Test
-//    public void objectRemembersItsType() {
-//        vehicle = new Car("Audi A8", 2);
-//        Car car  = (Car) vehicle; // Example of type casting Vehicle to Car
-//        assertEquals(2, car.getNumberOfDoors());
-//    }
+    //BELOW: Inheritance related tests:
+
+    @Test
+    public void carAsVehicle() {
+        vehicle = new Car("Audi A8", 2);
+        assertEquals("Audi A8", vehicle.getModel());
+    }
+
+    @Test
+    public void motorbikeAsVehicle() {
+        vehicle = new Motorbike("Harley");
+        assertEquals("Harley", vehicle.getModel());
+    }
+
+
+    // This is how you can test an abstract class (you instantiate it
+    // using a sub class - but you only get the behaviours of the abstract
+    // class)
+    @Test
+    public void changeTypeOfVehicle() {
+        vehicle = new Car("Audi A8", 2);
+        vehicle = new Motorbike("Harley");
+        assertEquals("Harley", vehicle.getModel());
+    }
+
+    @Test
+    public void collectionOfParentClassObjects() {
+        ArrayList<Vehicle> garage = new ArrayList<Vehicle>();
+        garage.add( new Car("Audi A8", 2));
+        garage.add( new Motorbike("Harley"));
+        garage.add( new Vehicle("Mini Morris", 4)); //note: this won't work with abstract classes
+        assertEquals(3, garage.size());
+    }
+
+    @Test
+    public void objectRemembersItsType() {
+        vehicle = new Car("Audi A8", 2);
+        Car car  = (Car) vehicle; // Example of type casting Vehicle to Car
+        assertEquals(2, car.getNumberOfDoors());
+    }
 }

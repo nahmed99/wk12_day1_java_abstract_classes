@@ -5,6 +5,10 @@ public class Motorbike extends Vehicle {
         super(model, 2);
     }
 
+    public String boardingInstructions() {
+        return "swing leg across seat and sit";
+    }
+
     public String drivingInstructions()
     {
         return super.drivingInstructions() + " Use handlebars to steer.";
